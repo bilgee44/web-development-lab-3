@@ -1,0 +1,245 @@
+/* ==========================================================
+   Лаборатори 03 – Бүртгэлийн формын загвар
+   ========================================================== */
+
+/* ---------- Даалгавар 5: Өнгө, фонтын тогтмол систем ---------- */
+:root {
+  --color-bg: #eef1f7;        /* хуудасны дэвсгэр */
+  --color-surface: #ffffff;   /* картын дэвсгэр */
+  --color-ink: #1b2440;       /* үндсэн текст */
+  --color-muted: #5d6784;     /* туслах текст */
+  --color-primary: #2340c9;   /* үндсэн өнгө (кобальт) */
+  --color-primary-dark: #1a31a0;
+  --color-accent: #f2b134;    /* badge-ийн шар */
+  --color-line: #cdd3e3;      /* хүрээ */
+
+  --font-heading: "Unbounded", "Segoe UI", sans-serif;
+  --font-body: "Onest", "Segoe UI", Arial, sans-serif;
+}
+
+/* ---------- Үндсэн тохиргоо ---------- */
+* {
+  box-sizing: border-box;   /* padding + border өргөнд шингэнэ */
+}
+
+body {
+  margin: 0;
+  padding: 40px 16px;
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* ---------- Карт (форм агуулах хайрцаг) ---------- */
+.card {
+  position: relative;        /* badge-ийн жишиг цэг (Даалгавар 4) */
+  max-width: 560px;
+  margin: 0 auto;            /* голлуулах */
+  padding: 40px 36px;        /* Даалгавар 3: padding */
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(27, 36, 64, 0.08);
+}
+
+/* ---------- Даалгавар 2: Гарчиг ---------- */
+.form-title {
+  margin: 0 0 8px;
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-primary);
+}
+
+.form-subtitle {
+  margin: 0 0 28px;
+  color: var(--color-muted);
+}
+
+/* ---------- Даалгавар 2 & 3: Талбар ---------- */
+.field {
+  margin-bottom: 20px;       /* талбар хоорондын зай */
+}
+
+.field-row {
+  display: flex;
+  gap: 16px;
+}
+
+.field-row .field {
+  flex: 1;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.field-input {
+  width: 100%;
+  padding: 12px 14px;                       /* дотоод зай */
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--color-ink);
+  background-color: #fafbfd;
+  border: 1.5px solid var(--color-line);    /* хүрээ */
+  border-radius: 8px;                       /* дугуйралт */
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.field-input::placeholder {
+  color: #9aa3bd;
+}
+
+.field-input:focus {
+  outline: none;
+  background-color: #fff;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(35, 64, 201, 0.15);
+}
+
+/* ---------- Radio / checkbox ---------- */
+.choice-group {
+  margin: 0 0 20px;
+  padding: 0;
+  border: none;
+}
+
+.choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.choice input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+}
+
+.agree {
+  display: flex;
+  margin: 8px 0 28px;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+/* ---------- Даалгавар 2: Товчнууд ---------- */
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  padding: 13px 24px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-primary {
+  flex: 1;
+  color: #fff;
+  background-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+  color: var(--color-primary);
+  background-color: transparent;
+  border-color: var(--color-line);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-primary);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ==========================================================
+   Даалгавар 4: position: relative / absolute
+   ========================================================== */
+
+/* Badge – .card (relative) дотор absolute-аар булан дээр байрлана */
+.badge {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  padding: 4px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  background-color: var(--color-accent);
+  border-radius: 999px;
+}
+
+/* Tooltip – JS-гүйгээр зөвхөн :hover / :focus-аар харагдана */
+.tooltip {
+  position: relative;        /* tooltip-text-ийн жишиг цэг */
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 6px;
+  font-size: 0.75rem;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  cursor: help;
+}
+
+.tooltip-text {
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: left;
+  color: #fff;
+  background-color: var(--color-ink);
+  border-radius: 6px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ---------- Жижиг дэлгэц ---------- */
+@media (max-width: 520px) {
+  .card {
+    padding: 32px 20px;
+  }
+  .field-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .actions {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Лаборатори 03 – Бүртгэлийн форм</title>
+
+  <!-- Google Fonts: Кирилл дэмждэг Unbounded (гарчиг) + Onest (үндсэн текст) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@600&display=swap" rel="stylesheet">
+
+  <!-- Даалгавар 1: External CSS холбох -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="card">
+    <!-- Даалгавар 4: position: relative/absolute – badge -->
+    <span class="badge">Шинэ</span>
+
+    <h1 class="form-title">Сургалтын бүртгэл</h1>
+    <p class="form-subtitle">Доорх мэдээллийг бөглөж, бүртгэлээ баталгаажуулна уу.</p>
+
+    <form action="#" method="post">
+
+      <div class="field-row">
+        <div class="field">
+          <label class="field-label" for="lastname">Овог</label>
+          <input class="field-input" type="text" id="lastname" name="lastname" placeholder="Бат" required>
+        </div>
+        <div class="field">
+          <label class="field-label" for="firstname">Нэр</label>
+          <input class="field-input" type="text" id="firstname" name="firstname" placeholder="Болд" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="email">И-мэйл</label>
+        <input class="field-input" type="email" id="email" name="email" placeholder="bold@example.mn" required>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="phone">Утасны дугаар</label>
+        <input class="field-input" type="tel" id="phone" name="phone" placeholder="99112233" pattern="[0-9]{8}" required>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label class="field-label" for="birthdate">Төрсөн огноо</label>
+          <input class="field-input" type="date" id="birthdate" name="birthdate">
+        </div>
+        <div class="field">
+          <label class="field-label" for="program">Хөтөлбөр</label>
+          <select class="field-input" id="program" name="program">
+            <option value="">Сонгох</option>
+            <option>Веб хөгжүүлэлт</option>
+            <option>Мэдээллийн систем</option>
+            <option>Өгөгдлийн шинжилгээ</option>
+          </select>
+        </div>
+      </div>
+
+      <fieldset class="choice-group">
+        <legend class="field-label">Хүйс</legend>
+        <label class="choice"><input type="radio" name="gender" value="male"> Эрэгтэй</label>
+        <label class="choice"><input type="radio" name="gender" value="female"> Эмэгтэй</label>
+      </fieldset>
+
+      <!-- Даалгавар 4: position: absolute – tooltip (CSS-ээр, JS-гүй) -->
+      <div class="field">
+        <label class="field-label" for="password">
+          Нууц үг
+          <span class="tooltip">?
+            <span class="tooltip-text">Хамгийн багадаа 8 тэмдэгт, 1 тоо агуулсан байна.</span>
+          </span>
+        </label>
+        <input class="field-input" type="password" id="password" name="password" minlength="8" required>
+      </div>
+
+      <label class="choice agree">
+        <input type="checkbox" name="agree" required>
+        Үйлчилгээний нөхцөлтэй танилцаж, зөвшөөрч байна
+      </label>
+
+      <div class="actions">
+        <button class="btn btn-primary" type="submit">Бүртгүүлэх</button>
+        <button class="btn btn-secondary" type="reset">Цэвэрлэх</button>
+      </div>
+
+    </form>
+  </main>
+
+</body>
+</html>
