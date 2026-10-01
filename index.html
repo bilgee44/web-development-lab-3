@@ -40,9 +40,20 @@
         <input class="field-input" type="email" id="email" name="email" placeholder="bold@example.mn" required>
       </div>
 
+      <div class="field-row">
+        <div class="field">
+          <label class="field-label" for="phone">Утасны дугаар</label>
+          <input class="field-input" type="tel" id="phone" name="phone" placeholder="99112233" pattern="[0-9]{8}" required>
+        </div>
+        <div class="field">
+          <label class="field-label" for="phone2">Нэмэлт утасны дугаар</label>
+          <input class="field-input" type="tel" id="phone2" name="phone2" placeholder="88112233" pattern="[0-9]{8}">
+        </div>
+      </div>
+
       <div class="field">
-        <label class="field-label" for="phone">Утасны дугаар</label>
-        <input class="field-input" type="tel" id="phone" name="phone" placeholder="99112233" pattern="[0-9]{8}" required>
+        <label class="field-label" for="address">Гэрийн хаяг</label>
+        <textarea class="field-input" id="address" name="address" rows="2" placeholder="Дүүрэг, хороо, байр, тоот"></textarea>
       </div>
 
       <div class="field-row">
@@ -51,45 +62,47 @@
           <input class="field-input" type="date" id="birthdate" name="birthdate">
         </div>
         <div class="field">
-          <label class="field-label" for="program">Хөтөлбөр</label>
+          <label class="field-label" for="program">Мэргэжил</label>
           <select class="field-input" id="program" name="program">
             <option value="">Сонгох</option>
-            <option>Веб хөгжүүлэлт</option>
+            <option>Мэдээллийн технологи</option>
             <option>Мэдээллийн систем</option>
-            <option>Өгөгдлийн шинжилгээ</option>
-          </select>
+            <option>Хиймэл оюун ухаан</option>
+            <option>Компьютерийн ухаан</option>
+            </select>
         </div>
-      </div>
+    </div>
 
-      <fieldset class="choice-group">
+    <fieldset class="choice-group">
         <legend class="field-label">Хүйс</legend>
         <label class="choice"><input type="radio" name="gender" value="male"> Эрэгтэй</label>
         <label class="choice"><input type="radio" name="gender" value="female"> Эмэгтэй</label>
-      </fieldset>
+        <label class="choice"><input type="radio" name="gender" value="other"> Бусад</label>
+    </fieldset>
 
-      <!-- Даалгавар 4: position: absolute – tooltip (CSS-ээр, JS-гүй) -->
-      <div class="field">
+    <!-- Даалгавар 4: position: absolute – tooltip (CSS-ээр, JS-гүй) -->
+    <div class="field">
         <label class="field-label" for="password">
-          Нууц үг
-          <span class="tooltip">?
+        Нууц үг
+        <span class="tooltip">?
             <span class="tooltip-text">Хамгийн багадаа 8 тэмдэгт, 1 тоо агуулсан байна.</span>
-          </span>
+        </span>
         </label>
         <input class="field-input" type="password" id="password" name="password" minlength="8" required>
-      </div>
+    </div>
 
-      <label class="choice agree">
+    <label class="choice agree">
         <input type="checkbox" name="agree" required>
         Үйлчилгээний нөхцөлтэй танилцаж, зөвшөөрч байна
-      </label>
+    </label>
 
-      <div class="actions">
+    <div class="actions">
         <button class="btn btn-primary" type="submit">Бүртгүүлэх</button>
         <button class="btn btn-secondary" type="reset">Цэвэрлэх</button>
-      </div>
+    </div>
 
     </form>
-  </main>
+</main>
 
 </body>
 </html>

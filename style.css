@@ -92,6 +92,11 @@ body {
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
+textarea.field-input {
+  resize: vertical;
+  min-height: 70px;
+}
+
 .field-input::placeholder {
   color: #9aa3bd;
 }
